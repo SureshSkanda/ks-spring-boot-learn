@@ -7,6 +7,12 @@
     <artifactId>gs-spring-boot</artifactId>
     <version>0.1.0</version>
 
+    <scm>
+        <connection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</connection>
+        <url>https://github.com/SureshSkanda/ks-spring-boot-learn</url>
+        <developerConnection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</developerConnection>
+    </scm>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
