@@ -18,7 +18,7 @@ apply plugin: 'io.spring.dependency-management'
 
 bootJar {
     baseName = 'gs-spring-boot'
-    version =  '0.1.0'
+   // version =  '0.1.0.g-SNAPSHOT'
 }
 
 repositories {
@@ -27,6 +27,26 @@ repositories {
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+ext {
+    nexusUser = "admin"
+    nexusPassword = "admin123"
+}
+
+uploadArchives {
+    dependsOn bootRepackage
+    repositories {
+        mavenDeployer {
+            repository(url: "http://ec2-13-232-110-79.ap-south-1.compute.amazonaws.com:47975/nexus/AwsDLabs/repository/SpringArtifacts-Releases/") {
+                authentication(userName: nexusUser, password: nexusPassword)
+            }
+
+            snapshotRepository(url: "http://ec2-13-232-110-79.ap-south-1.compute.amazonaws.com:47975/nexus/AwsDLabs/repository/SpringArtifact-Snapshots/") {
+                authentication(userName: nexusUser, password: nexusPassword)
+            }
+        }
+    }
+}
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
@@ -37,4 +57,12 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
     // end::tests[]
 }
+
+release {
+    versionPropertyFile = 'gradle.properties'
+    git {
+        requireBranch = ''
+    }
+}
+
 
