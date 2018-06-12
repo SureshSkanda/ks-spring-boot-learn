@@ -15,3 +15,5 @@ dependency-reduced-pom.xml
 README.html
 .idea
 *.iml
+initial/release.properties
+initial/pom.xml.releaseBackup
