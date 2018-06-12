@@ -4,13 +4,13 @@
 
     <groupId>org.springframework</groupId>
     <artifactId>gs-spring-boot</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</connection>
         <url>https://github.com/SureshSkanda/ks-spring-boot-learn</url>
         <developerConnection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</developerConnection>
-      <tag>v0.0.3</tag>
+      <tag>v0.0.2</tag>
     </scm>
 
     <parent>
