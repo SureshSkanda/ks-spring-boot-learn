@@ -11,7 +11,7 @@
         <url>https://github.com/SureshSkanda/ks-spring-boot-learn</url>
         <developerConnection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</developerConnection>
       <tag>HEAD</tag>
-  </scm>
+    </scm>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -43,10 +43,40 @@
                 <version>2.5.3</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
-                 </configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>releases</releaseProfiles>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+    <profiles>
+   <profile>
+      <id>releases</id>
+      <build>
+         <plugins>
+            <plugin>
+               <groupId>org.sonatype.plugins</groupId>
+               <artifactId>nexus-staging-maven-plugin</artifactId>
+               <version>1.6.8</version>
+               <executions>
+                  <execution>
+                     <id>default-deploy</id>
+                     <phase>deploy</phase>
+                     <goals>
+                        <goal>deploy</goal>
+                     </goals>
+                  </execution>
+               </executions>
+               <configuration>
+                  <serverId>Nexus-releases</serverId>
+                  <nexusUrl>http://ec2-13-232-110-79.ap-south-1.compute.amazonaws.com:47975/nexus/AwsDLabs/</nexusUrl>
+                  <skipStaging>true</skipStaging>
+               </configuration>
+            </plugin>
+         </plugins>
+      </build>
+   </profile>
+</profiles>
     <distributionManagement>
 
         <repository>
