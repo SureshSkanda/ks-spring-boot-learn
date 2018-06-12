@@ -4,7 +4,7 @@
 
     <groupId>org.springframework</groupId>
     <artifactId>gs-spring-boot</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.4-SNAPSHOT</version>
 
     <scm>
         <connection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</connection>
@@ -40,7 +40,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.4.2</version>
+                <version>2.5.2</version>
                 <configuration>
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
