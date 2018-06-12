@@ -34,7 +34,7 @@ ext {
 }
 
 uploadArchives {
-    dependsOn bootRepackage
+    //dependsOn bootRepackage
     repositories {
         mavenDeployer {
             repository(url: "http://ec2-13-232-110-79.ap-south-1.compute.amazonaws.com:47975/nexus/AwsDLabs/repository/SpringArtifacts-Releases/") {
