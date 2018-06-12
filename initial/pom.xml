@@ -10,7 +10,7 @@
         <connection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</connection>
         <url>https://github.com/SureshSkanda/ks-spring-boot-learn</url>
         <developerConnection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</developerConnection>
-      <tag>v0.0.4</tag>
+      
     </scm>
 
     <parent>

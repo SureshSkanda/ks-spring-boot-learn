@@ -7,6 +7,13 @@
     <artifactId>gs-spring-boot</artifactId>
     <version>0.1.0</version>
 
+    <scm>
+        <connection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</connection>
+        <url>https://github.com/SureshSkanda/ks-spring-boot-learn</url>
+        <developerConnection>scm:git:https://github.com/SureshSkanda/ks-spring-boot-learn.git</developerConnection>
+     
+    </scm>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -43,6 +50,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>releases</releaseProfiles>
+                </configuration>
+            </plugin>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <executions>
@@ -56,5 +73,17 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+
+        <repository>
+            <id>SpringArtifacts-Releases</id>
+            <url>http://ec2-13-232-110-79.ap-south-1.compute.amazonaws.com:47975/nexus/AwsDLabs/repository/SpringArtifacts-Releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>Nexus-Snapshots</id>
+            <url>http://ec2-13-232-110-79.ap-south-1.compute.amazonaws.com:47975/nexus/AwsDLabs/repository/SpringArtifact-Snapshots/</url>
+        </snapshotRepository>
+        
+    </distributionManagement>
 
 </project>
