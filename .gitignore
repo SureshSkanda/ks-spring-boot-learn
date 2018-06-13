@@ -17,3 +17,4 @@ README.html
 *.iml
 initial/release.properties
 initial/pom.xml.releaseBackup
+complete/gradle.properties
